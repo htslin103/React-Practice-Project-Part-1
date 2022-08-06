@@ -1,4 +1,5 @@
 import React, { useState} from 'react';
+import './UserForm.css'
 
 const UserForm = (props) => {
     const [enteredUsername, setEnteredUsername] = useState('');
@@ -26,8 +27,20 @@ const UserForm = (props) => {
     };
 
     return (
-        <form>
-
+        <form onSubmit={submitHandler}>
+            <div className='new-user__controls'>
+                <div className="new-user__control">
+                    <label>Username</label>
+                    <input type ="text" value = {enteredUsername} onChange = {usernameChangeHandler}/>
+                </div>
+                <div className="new-user__control">
+                    <label>Age</label>
+                    <input type ="text" value = {enteredAge} onChange = {ageChangeHandler}/>
+                </div>      
+            </div>
+            <div className='new-user__actions'>
+                <button type="submit">Add User</button>
+            </div>
         </form>
     );
 };

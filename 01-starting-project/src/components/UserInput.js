@@ -1,5 +1,7 @@
 import React, { useState} from 'react';
 import UserForm from './UserForm'
+import './UserInput.css'
+
 //This form we will use to add in the new Users
 const UserInput = (props) => {
 
@@ -8,12 +10,12 @@ const UserInput = (props) => {
             ...enteredUserData, 
             id: Math.random().toString()
         };
+        
         props.onAddUser(userData);
     };
 
     return(
-        <div className='new-user'>
-            <button> Add User</button>
+        <div className='new-user'>           
             <UserForm onSaveUserData = {saveUserDataHandler} />
         </div>
     );

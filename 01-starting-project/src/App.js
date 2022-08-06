@@ -1,58 +1,30 @@
 import React, { useState } from 'react';
 
-import CourseGoalList from './components/CourseGoals/CourseGoalList/CourseGoalList';
-import CourseInput from './components/CourseGoals/CourseInput/CourseInput';
+
 import './App.css';
-import './components/UI/UserInput.js'
+import './components/UserInput'
+import UserInput from './components/UserInput';
 
 const App = () => {
 
- /*  const [courseGoals, setCourseGoals] = useState([
-    { text: 'Do all exercises!', id: 'g1' },
-    { text: 'Finish the course!', id: 'g2' }
-  ]);
+  const [users, setUsers] = useState('');
 
-  const addGoalHandler = enteredText => {
-    setCourseGoals(prevGoals => {
-      const updatedGoals = [...prevGoals];
-      updatedGoals.unshift({ text: enteredText, id: 'goal1' });
-      return updatedGoals;
-    });
+  const getUserData = (user) =>
+  {
+    setUsers((prevUsers) => {
+      return[user, ...prevUsers];
+    }); 
+    console.log(users);
   };
 
-  const deleteItemHandler = goalId => {
-    setCourseGoals(prevGoals => {
-      const updatedGoals = prevGoals.filter(goal => goal.id !== goalId);
-      return updatedGoals;
-    });
-  }; */
-
-  let content = (
-    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
-  );
-
-/*   if (courseGoals.length > 0) {
-    content = (
-      <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />
-    );
-  } */
-
   return (
-
-/*       <div>
-        <section id="goal-form">
-      <CourseInput onAddGoal={addGoalHandler} />
-    </section>
-    <section id="goals">
-        {content}
-      </section>
-      </div> */
       <div>
         <section id="user-form">
-          <UserInput />
+          <UserInput onAddUser= {getUserData}/>
         </section>
         <section id="users-list">
-          {content}
+       
+         
         </section>
       </div>
 
