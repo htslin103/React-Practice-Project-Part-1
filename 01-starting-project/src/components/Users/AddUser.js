@@ -5,7 +5,7 @@ import Card from '../UI/Card';
 import classes from './AddUser.module.css';
 import ErrorModal from '../UI/ErrorModal';
 import Button from '../UI/Button';
-
+import Wrapper from '../Helpers/Wrapper';
 
 const AddUser = props => {
     //useState constants
@@ -57,7 +57,7 @@ const AddUser = props => {
     }
 
     return(
-    <div>
+    <Wrapper>
       {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler}/>}
         {/* //since Card is our own custom component, it doesn't know how to use className property so we have to write that
         //within our class component we called it className. If we picked something like ccsClassname then we would need to reference that in the card element */}
@@ -71,7 +71,7 @@ const AddUser = props => {
             <Button type="submit">Submit</Button>
         </form>
      </Card>
-    </div>
+    </Wrapper>
     );
 };
 
